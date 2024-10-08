@@ -31,15 +31,25 @@ the array can't be divided. So, when $n$ can be divided into 3 subarrays you get
 $3T(n/3)+1$. If you have your basecase met at $k=log_3n$ because when you divide the array into 3 parts at each reccursive step the depth of the recurrsion tree is proportional to $log_3$ of the array length $n$. The  reccurance relation is $3^kT(n/3^k) + \sum_{i=0}^{k} 3^{k}$. Solving this with with the depth of the recurssion tree $k$ you see that the work done at eacch level of reccursion is proportional to $n$ so the time complexity is $\Theta(n)$.
 
 
-DivandCon([1,2,3,4,5,6,7,8,9])
-    /         |           \
- [1,2,3]   [4,5,6]     [7,8,9]
-    |         |           |
-[1][2][3]  [4][5][6]    [7][8][9]
-  | | |      | | |        | | |
-  1 2 3  +   4 5 6    +   7 8 9
-    6    +     15     +    24
-        = 45
+divideAndConquerSum([1, 2, 3, 4, 5, 6, 7, 8, 9])
+    ├── divideAndConquerSum([1, 2, 3])
+    │   ├── divideAndConquerSum([1])
+    │   ├── divideAndConquerSum([2])
+    │   └── divideAndConquerSum([3])
+    ├── divideAndConquerSum([4, 5, 6])
+    │   ├── divideAndConquerSum([4])
+    │   ├── divideAndConquerSum([5])
+    │   └── divideAndConquerSum([6])
+    └── divideAndConquerSum([7, 8, 9])
+        ├── divideAndConquerSum([7])
+        ├── divideAndConquerSum([8])
+        └── divideAndConquerSum([9])
+
+
+
 
 I used my repo from last semester but tried to have my explanation more concise. 
 https://github.com/COSC3020/divide-and-conquer-sum-Hrics12
+I had chatgpt make the recursion tree so I could visualize it better
+
+"I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice."
