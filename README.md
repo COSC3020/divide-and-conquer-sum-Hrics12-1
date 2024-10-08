@@ -31,19 +31,20 @@ the array can't be divided. So, when $n$ can be divided into 3 subarrays you get
 $3T(n/3)+1$. If you have your basecase met at $k=log_3n$ because when you divide the array into 3 parts at each reccursive step the depth of the recurrsion tree is proportional to $log_3$ of the array length $n$. The  reccurance relation is $3^kT(n/3^k) + \sum_{i=0}^{k} 3^{k}$. Solving this with with the depth of the recurssion tree $k$ you see that the work done at eacch level of reccursion is proportional to $n$ so the time complexity is $\Theta(n)$.
 
 
-divideAndConquerSum([1, 2, 3, 4, 5, 6, 7, 8, 9])
-    ├── divideAndConquerSum([1, 2, 3])
-    │   ├── divideAndConquerSum([1])
-    │   ├── divideAndConquerSum([2])
-    │   └── divideAndConquerSum([3])
-    ├── divideAndConquerSum([4, 5, 6])
-    │   ├── divideAndConquerSum([4])
-    │   ├── divideAndConquerSum([5])
-    │   └── divideAndConquerSum([6])
-    └── divideAndConquerSum([7, 8, 9])
-        ├── divideAndConquerSum([7])
-        ├── divideAndConquerSum([8])
-        └── divideAndConquerSum([9])
+divideAndConquerSum([1, 2, 3, 4, 5, 6, 7, 8, 9])  
+├── divideAndConquerSum([1, 2, 3])  
+│   ├── divideAndConquerSum([1])  
+│   ├── divideAndConquerSum([2])  
+│   └── divideAndConquerSum([3])  
+├── divideAndConquerSum([4, 5, 6])  
+│   ├── divideAndConquerSum([4])  
+│   ├── divideAndConquerSum([5])  
+│   └── divideAndConquerSum([6])  
+└── divideAndConquerSum([7, 8, 9])  
+    ├── divideAndConquerSum([7])  
+    ├── divideAndConquerSum([8])  
+    └── divideAndConquerSum([9])  
+
 
 
 
